@@ -3,6 +3,32 @@
 
 require $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
 
-$ccd2cue = new \Menrui\CCD2CUE();
-$output  = $ccd2cue->convert($argv[1]);
-echo "$output\n";
+use Menrui\Exception;
+use Menrui\CCD2CUE;
+
+exit(main($argv));
+
+function main(array $argv): int
+{
+    $ccd = $argv[1] ?? null;
+    if (!$ccd) {
+        help();
+        return 0;
+    }
+
+    try {
+        $ccd2cue = new CCD2CUE();
+        $cue     = $ccd2cue->convert($ccd);
+        echo "$cue\n";
+        return 0;
+    } catch (Exception $e) {
+        $err = $e->getMessage();
+        fwrite(STDERR, "$err\n");
+        return 1;
+    }
+}
+
+function help(): void
+{
+    echo "USAGE: ccd2cue (ccd path)\n";
+}
