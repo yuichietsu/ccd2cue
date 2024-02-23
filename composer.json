@@ -7,7 +7,7 @@
         "menrui/menrui": "*"
     },
     "scripts": {
-        "sync": "bin/convert.php"
+        "convert": "bin/convert.php"
     },
     "autoload": {
         "psr-4": {
