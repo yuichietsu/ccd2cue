@@ -7,15 +7,13 @@ CCDのファイルフォーマットは非公開のようなので変換の正�
 ## インストール
 
 ```
-# git clone https://github.com/yuichietsu/ccd2cue/
-# cd ccd2cue
-# composer install
+# composer require menrui/ccd2cue
 ```
 
 ## 使い方
 
 ```
-# composer run convert -- /mnt/d/tmp/game.ccd
+# vendor/bin/ccd2cue /mnt/d/tmp/game.ccd
 ```
 
 ## 免責
