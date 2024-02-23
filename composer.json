@@ -6,9 +6,8 @@
     "require": {
         "menrui/menrui": "*"
     },
-    "scripts": {
-        "convert": "bin/convert.php"
-    },
+    "scripts": {},
+    "bin": ["ccd2cue"],
     "autoload": {
         "psr-4": {
             "Menrui\\": "src/"
