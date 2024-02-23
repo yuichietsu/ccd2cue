@@ -7,7 +7,7 @@
         "menrui/menrui": "*"
     },
     "scripts": {},
-    "bin": ["ccd2cue"],
+    "bin": ["bin/ccd2cue"],
     "autoload": {
         "psr-4": {
             "Menrui\\": "src/"
